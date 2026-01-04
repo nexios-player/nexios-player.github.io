@@ -58,11 +58,17 @@ body {
   font-weight: 700;
   letter-spacing: 0.4px;
   font-size: 18px;
+  text-decoration: none;
+  color: var(--text);
 }
 
 .brand img {
   height: 38px;
   width: 38px;
+}
+
+.brand span {
+  color: var(--text);
 }
 
 .nav-links {

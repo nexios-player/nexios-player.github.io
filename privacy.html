@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Axxos Player | Legal</title>
-  <link rel="canonical" href="https://axxos-player.github.io/legal.html">
+  <title>Axxos Player | Privacy Policy</title>
+  <link rel="canonical" href="https://axxos-player.github.io/privacy.html">
   <link rel="icon" type="image/svg+xml" href="OSPlayerlogo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
         <a href="index.html#features">Features</a>
         <a href="index.html#platforms">Platforms</a>
         <a href="support.html">Support</a>
-        <a href="mailto:ossoftwaredev@gmail.com">Contact</a>
+        <a href="legal.html">Legal</a>
       </nav>
       <div class="nav-actions">
         <a class="btn ghost" href="index.html#download">Get the app</a>
@@ -32,25 +32,27 @@
     <main>
       <section class="section-head">
         <p class="eyebrow">Legal</p>
-        <h2>Your data and rights.</h2>
-        <p class="section-lede">We keep policies clear so you know how Axxos Player handles content, recordings, and account data.</p>
+        <h2>Privacy Policy</h2>
+        <p class="section-lede">Last Updated: January 3, 2026</p>
       </section>
-
-      <section class="feature-grid">
-        <article class="feature-card legal-card">
-          <div class="icon-chip">🛡</div>
-          <h3>End User License Agreement & Terms of Service</h3>
-          <p class="legal-updated">Last Updated: January 3, 2026</p>
-          <a class="btn small primary" href="terms.html">Read full EULA & Terms</a>
-        </article>
-        <article class="feature-card legal-card">
-          <div class="icon-chip">📄</div>
-          <h3>Privacy Policy</h3>
-          <p class="legal-updated">Last Updated: January 3, 2026</p>
-          <a class="btn small primary" href="privacy.html">Read full Privacy Policy</a>
-        </article>
+      <section class="feature-card legal-card">
+        <div class="legal-box">
+          <pre id="privacy-content">Loading privacy policy…</pre>
+        </div>
       </section>
     </main>
   </div>
+  <script>
+    (async () => {
+      try {
+        const res = await fetch('privacy-policy.txt');
+        if (!res.ok) throw new Error('Failed to load');
+        const text = await res.text();
+        document.getElementById('privacy-content').textContent = text;
+      } catch (err) {
+        document.getElementById('privacy-content').textContent = 'Unable to load this document right now. Please email ossoftwaredev@gmail.com.';
+      }
+    })();
+  </script>
 </body>
 </html>
