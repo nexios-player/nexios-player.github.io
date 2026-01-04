@@ -251,5 +251,28 @@
       <p class="caption">© 2026 Axxos Player. Built for clarity.</p>
     </footer>
   </div>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+    <span class="dot"></span>
+    <span class="label">Theme</span>
+  </button>
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const stored = localStorage.getItem('axxos-theme');
+      const initial = stored === 'grey' ? 'grey' : 'blue';
+      const apply = (theme) => {
+        const mode = theme === 'grey' ? 'grey' : 'blue';
+        root.setAttribute('data-theme', mode);
+        toggle.setAttribute('data-theme', mode);
+        localStorage.setItem('axxos-theme', mode);
+      };
+      apply(initial);
+      toggle.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'grey' ? 'blue' : 'grey';
+        apply(next);
+      });
+    })();
+  </script>
 </body>
 </html>

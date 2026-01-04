@@ -1,5 +1,10 @@
 :root {
   --bg: #050c17;
+  --bg-1: rgba(62, 216, 211, 0.08);
+  --bg-2: rgba(255, 180, 73, 0.12);
+  --bg-3: #0b1f33;
+  --bg-4: #071225;
+  --bg-5: #040814;
   --panel: rgba(255, 255, 255, 0.06);
   --panel-strong: rgba(255, 255, 255, 0.12);
   --text: #e7edf7;
@@ -14,6 +19,22 @@
   background: var(--bg);
 }
 
+:root[data-theme="grey"] {
+  --bg: #0b0d10;
+  --bg-1: rgba(180, 186, 195, 0.1);
+  --bg-2: rgba(210, 214, 222, 0.12);
+  --bg-3: #1a1e24;
+  --bg-4: #12151b;
+  --bg-5: #0b0d10;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(255, 255, 255, 0.1);
+  --text: #e5e7ec;
+  --muted: #b6bcc5;
+  --accent: #b2c0d0;
+  --accent-2: #d6dde5;
+  --stroke: rgba(255, 255, 255, 0.08);
+}
+
 *,
 *::before,
 *::after {
@@ -22,9 +43,9 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(62, 216, 211, 0.08), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgba(255, 180, 73, 0.12), transparent 32%),
-    linear-gradient(135deg, #0b1f33, #071225 52%, #040814);
+  background: radial-gradient(circle at 20% 20%, var(--bg-1), transparent 30%),
+    radial-gradient(circle at 80% 0%, var(--bg-2), transparent 32%),
+    linear-gradient(135deg, var(--bg-3), var(--bg-4) 52%, var(--bg-5));
   color: var(--text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -721,6 +742,48 @@ main {
 
 .footer-links a:hover {
   color: var(--text);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+}
+
+.theme-toggle .dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(130deg, var(--accent), var(--accent-2));
+  border: 1px solid var(--stroke);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle .label {
+  font-size: 14px;
+}
+
+.theme-toggle[data-theme="grey"] .dot {
+  transform: translateX(2px);
+}
+
+@media (max-width: 640px) {
+  .theme-toggle {
+    bottom: 14px;
+    right: 14px;
+  }
 }
 
 .legal-card .legal-updated {
