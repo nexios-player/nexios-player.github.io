@@ -11,6 +11,9 @@
   --muted: #9cb2c7;
   --accent: #3ed8d3;
   --accent-2: #ffb449;
+  --accent-tint: rgba(62, 216, 211, 0.12);
+  --accent-overlay: rgba(62, 216, 211, 0.18);
+  --accent-shadow: 0 12px 30px rgba(62, 216, 211, 0.35);
   --stroke: rgba(255, 255, 255, 0.08);
   --shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
   --radius: 18px;
@@ -36,6 +39,9 @@
   --muted: #b6bcc5;
   --accent: #b2c0d0;
   --accent-2: #d6dde5;
+  --accent-tint: rgba(214, 220, 230, 0.12);
+  --accent-overlay: rgba(214, 220, 230, 0.2);
+  --accent-shadow: 0 12px 30px rgba(214, 220, 230, 0.3);
   --stroke: rgba(255, 255, 255, 0.08);
   --nav-bg: rgba(32, 36, 43, 0.82);
   --surface-1: rgba(38, 44, 52, 0.92);
@@ -143,10 +149,10 @@ body {
 }
 
 .btn.primary {
-  background: linear-gradient(120deg, #2fb4b0, var(--accent));
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
   color: #041018;
   border-color: transparent;
-  box-shadow: 0 12px 30px rgba(62, 216, 211, 0.35);
+  box-shadow: var(--accent-shadow);
 }
 
 .btn.primary:hover {
@@ -242,8 +248,8 @@ main {
 .glow {
   position: absolute;
   inset: -40px;
-  background: radial-gradient(circle at 40% 40%, rgba(62, 216, 211, 0.16), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(255, 180, 73, 0.18), transparent 46%);
+  background: radial-gradient(circle at 40% 40%, var(--accent-overlay), transparent 40%),
+    radial-gradient(circle at 80% 0%, var(--accent-tint), transparent 46%);
   filter: blur(18px);
   z-index: 0;
 }
@@ -281,7 +287,7 @@ main {
 }
 
 .pill.subtle {
-  border-color: rgba(62, 216, 211, 0.4);
+  border-color: rgba(255, 255, 255, 0.24);
   color: var(--accent);
 }
 
@@ -302,7 +308,7 @@ main {
 .waveform span {
   display: block;
   height: 26px;
-  background: linear-gradient(180deg, var(--accent), rgba(62, 216, 211, 0.1));
+  background: linear-gradient(180deg, var(--accent), var(--accent-tint));
   border-radius: 6px;
   opacity: 0.7;
 }
@@ -393,8 +399,8 @@ main {
 }
 
 .queue-item.active {
-  border-color: rgba(62, 216, 211, 0.4);
-  background: linear-gradient(120deg, rgba(62, 216, 211, 0.18), rgba(255, 255, 255, 0.03));
+  border-color: var(--accent-overlay);
+  background: linear-gradient(120deg, var(--accent-overlay), rgba(255, 255, 255, 0.03));
   color: var(--text);
 }
 
@@ -465,7 +471,7 @@ main {
   width: 36px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, rgba(62, 216, 211, 0.18), rgba(255, 180, 73, 0.18));
+  background: linear-gradient(135deg, var(--accent-overlay), var(--accent-tint));
   border-radius: 12px;
   border: 1px solid var(--stroke);
   font-weight: 700;
@@ -514,7 +520,7 @@ main {
   align-items: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(62, 216, 211, 0.12);
+  background: var(--accent-tint);
   color: var(--accent);
   font-weight: 700;
   letter-spacing: 0.6px;
@@ -597,7 +603,7 @@ main {
 .eq-bars span {
   display: block;
   width: 100%;
-  background: linear-gradient(180deg, var(--accent), rgba(62, 216, 211, 0.1));
+  background: linear-gradient(180deg, var(--accent), var(--accent-tint));
   border-radius: 8px;
 }
 
@@ -655,6 +661,19 @@ main {
   line-height: 1.6;
 }
 
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.store-badge {
+  width: 180px;
+  height: auto;
+}
+
 .cta {
   margin: 40px 0 60px;
   padding: 0 14px;
@@ -664,8 +683,8 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  background: linear-gradient(135deg, rgba(62, 216, 211, 0.22), rgba(4, 16, 24, 0.92));
-  border: 1px solid rgba(62, 216, 211, 0.25);
+  background: linear-gradient(135deg, var(--accent-overlay), var(--surface-2));
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 22px;
   padding: 22px;
   box-shadow: var(--shadow);
