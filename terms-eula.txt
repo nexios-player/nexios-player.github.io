@@ -2,7 +2,7 @@ END USER LICENSE AGREEMENT & TERMS OF SERVICE
 Last Updated: January 3, 2026
 
 1. THE AGREEMENT
-This Agreement is a legal contract between you and the developer of Axxos and Axxos Player (collectively, the "App"). By using the App on iOS, macOS, or tvOS, you agree to these terms and the Apple Standard EULA.
+This Agreement is a legal contract between you and the developer of Nexios and Nexios Player (collectively, the "App"). By using the App on iOS, macOS, or tvOS, you agree to these terms and the Apple Standard EULA.
 
 2. NEUTRAL PLAYER DISCLOSURE (IMPORTANT)
 The App is a technical tool for playing media. The App does NOT provide, host, or distribute any media content, IPTV subscriptions, M3U playlists, or streaming credentials. 
@@ -11,7 +11,7 @@ The App is a technical tool for playing media. The App does NOT provide, host, o
 - We do not "check" or "verify" the legality of your M3U, Xtream, or SMB sources.
 
 3. COPYRIGHT & INTELLECTUAL PROPERTY
-Axxos respects intellectual property rights. We do not condone or support the use of our software for accessing copyrighted material without authorization. If you use this App to access pirated content, you do so at your own risk and in violation of this Agreement.
+Nexios respects intellectual property rights. We do not condone or support the use of our software for accessing copyrighted material without authorization. If you use this App to access pirated content, you do so at your own risk and in violation of this Agreement.
 
 4. USER-PROVIDED CONNECTIONS (SMB/M3U/XTREAM)
 By adding a source (M3U, Xtream Codes, or SMB/Local Network), you represent that you have the legal right to access that data. The App merely provides the interface to view it.
@@ -26,3 +26,4 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE DEVELOPER SHALL NOT BE LIABLE FOR AN
 
 7. CONTACT
 Support: ossoftwaredev@gmail.com
+

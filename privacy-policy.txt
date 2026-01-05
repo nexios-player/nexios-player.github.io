@@ -2,7 +2,7 @@ PRIVACY POLICY
 Last Updated: January 3, 2026
 
 1. DATA MINIMIZATION PRINCIPLE
-Axxos and Axxos Player are designed to be "privacy-first." We do not operate central servers that store your streaming habits or credentials.
+Nexios and Nexios Player are designed to be "privacy-first." We do not operate central servers that store your streaming habits or credentials.
 
 2. INFORMATION WE DO NOT COLLECT
 - We do NOT collect your IPTV credentials (usernames/passwords).
@@ -30,3 +30,4 @@ The App is not intended for children under 13. We do not knowingly collect infor
 
 7. CONTACT
 Privacy Inquiries: ossoftwaredev@gmail.com
+

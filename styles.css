@@ -21,7 +21,7 @@
   --surface-1: rgba(17, 37, 62, 0.92);
   --surface-2: rgba(9, 19, 35, 0.95);
   --experience-grad: linear-gradient(140deg, rgba(62, 216, 211, 0.12), rgba(7, 18, 37, 0.8));
-  font-family: "Space Grotesk", "DM Sans", sans-serif;
+  font-family: "Saira", "DM Sans", sans-serif;
   color: var(--text);
   background: var(--bg);
 }
@@ -831,7 +831,7 @@ main {
 
 .legal-text pre {
   white-space: pre-wrap;
-  font-family: "DM Sans", "Space Grotesk", sans-serif;
+  font-family: "DM Sans", "Saira", sans-serif;
   color: var(--text);
   margin: 0;
   line-height: 1.6;
@@ -893,3 +893,4 @@ main {
     padding: 16px;
   }
 }
+
