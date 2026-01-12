@@ -6,6 +6,8 @@ const PLATFORM_CONFIG = [
 
 const IMAGE_EXTENSIONS = new Set(["png", "jpg", "jpeg", "webp", "gif", "avif"]);
 
+let lightboxApi = null;
+
 function isImageFilename(filename) {
   if (!filename || filename.startsWith(".")) return false;
   const parts = filename.split(".");
@@ -102,16 +104,77 @@ function buildImageItems({ folder, label, filenames, optimizedWebpNames }) {
 }
 
 function setImageWithFallback(img, preferredSrc, fallbackSrc) {
-  img.src = preferredSrc;
-  if (preferredSrc === fallbackSrc) return;
+  img.onerror = null;
 
-  img.addEventListener(
-    "error",
-    () => {
-      img.src = fallbackSrc;
-    },
-    { once: true },
-  );
+  if (preferredSrc === fallbackSrc) {
+    img.src = preferredSrc;
+    return;
+  }
+
+  img.onerror = () => {
+    img.onerror = null;
+    img.src = fallbackSrc;
+  };
+
+  img.src = preferredSrc;
+}
+
+function setupLightbox() {
+  const root = document.getElementById("lightbox");
+  if (!root || !(root instanceof HTMLElement)) return null;
+
+  const img = root.querySelector(".lightbox-image");
+  const closeButton = root.querySelector(".lightbox-close");
+
+  if (!img || !(img instanceof HTMLImageElement)) return null;
+  if (!closeButton || !(closeButton instanceof HTMLButtonElement)) return null;
+
+  let previousFocus = null;
+  let previousBodyOverflow = "";
+  let previousHtmlOverflow = "";
+
+  function close() {
+    if (root.hidden) return;
+    root.hidden = true;
+    img.removeAttribute("src");
+    img.alt = "";
+
+    document.body.style.overflow = previousBodyOverflow;
+    document.documentElement.style.overflow = previousHtmlOverflow;
+    window.removeEventListener("keydown", onKeydown);
+
+    if (previousFocus instanceof HTMLElement) previousFocus.focus();
+    previousFocus = null;
+  }
+
+  function onKeydown(event) {
+    if (!(event instanceof KeyboardEvent)) return;
+    if (event.key === "Escape") close();
+  }
+
+  root.querySelectorAll("[data-lightbox-close]").forEach((el) => {
+    if (!(el instanceof HTMLElement)) return;
+    el.addEventListener("click", close);
+  });
+
+  function open({ src, fallbackSrc, alt } = {}) {
+    if (!src) return;
+
+    previousFocus = document.activeElement;
+    previousBodyOverflow = document.body.style.overflow;
+    previousHtmlOverflow = document.documentElement.style.overflow;
+
+    img.alt = alt ?? "Screenshot";
+    setImageWithFallback(img, src, fallbackSrc ?? src);
+
+    root.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeydown);
+    closeButton.focus();
+  }
+
+  return { open, close };
 }
 
 function renderCarousel(root, items, { active } = { active: false }) {
@@ -144,8 +207,11 @@ function renderCarousel(root, items, { active } = { active: false }) {
     const slide = document.createElement("a");
     slide.className = "carousel-slide";
     slide.href = item.originalSrc;
-    slide.target = "_blank";
-    slide.rel = "noopener noreferrer";
+    slide.addEventListener("click", (event) => {
+      if (!lightboxApi) return;
+      event.preventDefault();
+      lightboxApi.open({ src: item.src, fallbackSrc: item.originalSrc, alt: item.alt });
+    });
 
     const img = document.createElement("img");
     img.alt = item.alt;
@@ -239,8 +305,11 @@ function renderGalleryGrid(container, items, { active } = { active: false }) {
     const shot = document.createElement("a");
     shot.className = "gallery-shot";
     shot.href = item.originalSrc;
-    shot.target = "_blank";
-    shot.rel = "noopener noreferrer";
+    shot.addEventListener("click", (event) => {
+      if (!lightboxApi) return;
+      event.preventDefault();
+      lightboxApi.open({ src: item.src, fallbackSrc: item.originalSrc, alt: item.alt });
+    });
 
     const img = document.createElement("img");
     img.alt = item.alt;
@@ -258,6 +327,8 @@ async function init() {
 
   const repoInfo = inferGitHubRepo();
   if (!repoInfo) return;
+
+  lightboxApi = setupLightbox();
 
   const activePreview = getCheckedPlatform("preview", "tvos");
   const activeGallery = getCheckedPlatform("gallery", "tvos");

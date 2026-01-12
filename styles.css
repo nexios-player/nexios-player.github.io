@@ -466,10 +466,66 @@ main {
   text-align: center;
 }
 
-.preview-caption {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 13px;
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 16, 0.72);
+  backdrop-filter: blur(14px);
+}
+
+.lightbox-dialog {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(12, 14, 20, 0.55);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  max-width: 96vw;
+  max-height: 92vh;
+}
+
+.lightbox-image {
+  display: block;
+  max-width: 92vw;
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(8, 10, 16, 0.55);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .section-head {
