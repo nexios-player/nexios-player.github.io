@@ -292,6 +292,7 @@ function renderCarousel(root, items, { active } = { active: false }) {
 function renderGalleryGrid(container, items, { active } = { active: false }) {
   if (!container) return;
   container.innerHTML = "";
+  container.classList.toggle("is-empty", items.length === 0);
 
   if (items.length === 0) {
     const empty = document.createElement("p");
@@ -320,6 +321,83 @@ function renderGalleryGrid(container, items, { active } = { active: false }) {
     shot.appendChild(img);
     container.appendChild(shot);
   });
+}
+
+function setupGalleryRail() {
+  const rail = document.querySelector(".gallery-rail");
+  if (!rail || !(rail instanceof HTMLElement)) return;
+
+  const prevBtn = rail.querySelector(".gallery-scroll.prev");
+  const nextBtn = rail.querySelector(".gallery-scroll.next");
+
+  if (!prevBtn || !(prevBtn instanceof HTMLButtonElement)) return;
+  if (!nextBtn || !(nextBtn instanceof HTMLButtonElement)) return;
+
+  function getActiveGrid() {
+    const key = getCheckedPlatform("gallery", "tvos");
+    const grid = rail.querySelector(`.gallery-grid[data-platform="${key}"]`);
+    return grid instanceof HTMLElement ? grid : null;
+  }
+
+  function scrollByAmount(direction) {
+    const grid = getActiveGrid();
+    if (!grid) return;
+    const amount = Math.max(1, Math.round(grid.clientWidth * 0.85));
+    grid.scrollBy({ left: amount * direction, behavior: "smooth" });
+  }
+
+  prevBtn.addEventListener("click", () => scrollByAmount(-1));
+  nextBtn.addEventListener("click", () => scrollByAmount(1));
+
+  let raf = 0;
+  const scheduleUpdate = () => {
+    if (raf) return;
+    raf = window.requestAnimationFrame(() => {
+      raf = 0;
+      updateControls();
+    });
+  };
+
+  function updateControls() {
+    const grid = getActiveGrid();
+    if (!grid) {
+      rail.classList.remove("is-scrollable");
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    const maxScrollLeft = grid.scrollWidth - grid.clientWidth;
+    const hasOverflow = maxScrollLeft > 4;
+    rail.classList.toggle("is-scrollable", hasOverflow);
+
+    if (!hasOverflow) {
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    prevBtn.disabled = grid.scrollLeft <= 0;
+    nextBtn.disabled = grid.scrollLeft >= maxScrollLeft - 1;
+  }
+
+  rail.querySelectorAll(".gallery-grid").forEach((grid) => {
+    if (!(grid instanceof HTMLElement)) return;
+    grid.addEventListener("scroll", scheduleUpdate, { passive: true });
+  });
+
+  window.addEventListener("resize", scheduleUpdate);
+
+  document.querySelectorAll('input[id^="gallery-"]').forEach((input) => {
+    if (!(input instanceof HTMLInputElement)) return;
+    input.addEventListener("change", () => {
+      const grid = getActiveGrid();
+      if (grid) grid.scrollLeft = 0;
+      scheduleUpdate();
+    });
+  });
+
+  scheduleUpdate();
 }
 
 async function init() {
@@ -368,6 +446,8 @@ async function init() {
     const galleryGrid = document.querySelector(`.gallery-grid[data-platform="${key}"]`);
     renderGalleryGrid(galleryGrid, imagesByPlatform[key] ?? [], { active: key === activeGallery });
   });
+
+  setupGalleryRail();
 }
 
 init().catch(() => {
