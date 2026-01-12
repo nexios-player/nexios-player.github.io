@@ -302,8 +302,7 @@ main {
 }
 
 .preview-frame {
-  display: grid;
-  place-items: center;
+  position: relative;
   height: clamp(240px, 34vw, 360px);
   max-height: 52vh;
   border-radius: 18px;
@@ -311,33 +310,160 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.2));
   padding: 10px;
-  text-decoration: none;
 }
 
-.preview-link {
+#preview-ios:checked ~ .preview-frame {
+  height: clamp(320px, 62vw, 560px);
+  max-height: 72vh;
+}
+
+.preview-carousel {
   display: none;
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
-.preview-link picture {
+#preview-tvos:checked ~ .preview-frame .preview-carousel[data-platform="tvos"],
+#preview-macos:checked ~ .preview-frame .preview-carousel[data-platform="macos"],
+#preview-ios:checked ~ .preview-frame .preview-carousel[data-platform="ios"] {
   display: block;
-  width: 100%;
-  height: 100%;
 }
 
-.preview-image {
-  display: block;
-  width: 100%;
+.carousel-viewport {
   height: 100%;
-  object-fit: contain;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   border-radius: 12px;
+  padding-bottom: 42px;
 }
 
-#preview-tvos:checked ~ .preview-frame .preview-link[data-platform="tvos"],
-#preview-macos:checked ~ .preview-frame .preview-link[data-platform="macos"],
-#preview-ios:checked ~ .preview-frame .preview-link[data-platform="ios"] {
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-viewport {
+  scrollbar-width: none;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: contain;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(8, 10, 16, 0.38);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.03);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.carousel-btn:disabled:hover {
+  transform: translateY(-50%);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.carousel-btn.prev {
+  left: 8px;
+}
+
+.carousel-btn.next {
+  right: 8px;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 10, 16, 0.32);
+  backdrop-filter: blur(12px);
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-dot[aria-current="true"] {
+  width: 18px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  opacity: 0.95;
+}
+
+.preview-carousel.is-single .carousel-btn,
+.preview-carousel.is-single .carousel-dots,
+.preview-carousel.is-empty .carousel-btn,
+.preview-carousel.is-empty .carousel-dots {
+  display: none;
+}
+
+.carousel-empty {
+  min-width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.gallery-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 24px 10px;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
 }
 
 .preview-caption {
@@ -939,6 +1065,11 @@ main {
 
   .nav {
     border-radius: 16px;
+  }
+
+  #preview-ios:checked ~ .preview-frame {
+    height: clamp(360px, 120vw, 540px);
+    max-height: none;
   }
 
   .feature-card,

@@ -6,6 +6,8 @@
   <title>nexios player | Precision Audio for Every Moment</title>
   <meta name="description" content="nexios player is the cinematic video player for Xtream/M3U/SMB streams with recording, volume guarding, and seamless playback across tvOS, macOS, and iOS.">
   <link rel="canonical" href="https://nexios-player.github.io/">
+  <meta name="github-owner" content="nexios-player">
+  <meta name="github-repo" content="nexios-player.github.io">
   <link rel="icon" type="image/png" href="MarketingButtons/OSPIconNew-iOS-Default-1024x1024@1x.png">
   <meta property="og:title" content="nexios player | Precision Audio for Every Moment">
   <meta property="og:description" content="nexios player is a cinematic video player for Xtream, M3U, and SMB streams with live recording and volume guard across tvOS, macOS, and iOS.">
@@ -73,27 +75,27 @@
             </div>
 
             <div class="preview-frame" aria-label="Screenshot preview">
-              <a class="preview-link" data-platform="tvos" href="AppImages/tvOS/1.png" target="_blank" rel="noopener noreferrer" aria-label="Open tvOS screenshot in a new tab">
-                <picture>
-                  <source srcset="AppImages/web/tvOS-1.webp" type="image/webp">
-                  <img class="preview-image" src="AppImages/tvOS/1.png" alt="nexios player on tvOS" width="3840" height="2160" decoding="async" fetchpriority="high">
-                </picture>
-              </a>
-              <a class="preview-link" data-platform="macos" href="AppImages/macOS/1.png" target="_blank" rel="noopener noreferrer" aria-label="Open macOS screenshot in a new tab">
-                <picture>
-                  <source srcset="AppImages/web/macOS-1.webp" type="image/webp">
-                  <img class="preview-image" src="AppImages/macOS/1.png" alt="nexios player on macOS" width="1280" height="800" decoding="async" loading="lazy">
-                </picture>
-              </a>
-              <a class="preview-link" data-platform="ios" href="AppImages/iOS/1.png" target="_blank" rel="noopener noreferrer" aria-label="Open iOS screenshot in a new tab">
-                <picture>
-                  <source srcset="AppImages/web/iOS-1.webp" type="image/webp">
-                  <img class="preview-image" src="AppImages/iOS/1.png" alt="nexios player on iOS" width="2048" height="2732" decoding="async" loading="lazy">
-                </picture>
-              </a>
+              <div class="preview-carousel" data-platform="tvos" aria-label="tvOS screenshots">
+                <button class="carousel-btn prev" type="button" aria-label="Previous tvOS screenshot">‹</button>
+                <div class="carousel-viewport" tabindex="0"></div>
+                <button class="carousel-btn next" type="button" aria-label="Next tvOS screenshot">›</button>
+                <div class="carousel-dots" aria-label="tvOS screenshot pages"></div>
+              </div>
+              <div class="preview-carousel" data-platform="macos" aria-label="macOS screenshots">
+                <button class="carousel-btn prev" type="button" aria-label="Previous macOS screenshot">‹</button>
+                <div class="carousel-viewport" tabindex="0"></div>
+                <button class="carousel-btn next" type="button" aria-label="Next macOS screenshot">›</button>
+                <div class="carousel-dots" aria-label="macOS screenshot pages"></div>
+              </div>
+              <div class="preview-carousel" data-platform="ios" aria-label="iOS screenshots">
+                <button class="carousel-btn prev" type="button" aria-label="Previous iOS screenshot">‹</button>
+                <div class="carousel-viewport" tabindex="0"></div>
+                <button class="carousel-btn next" type="button" aria-label="Next iOS screenshot">›</button>
+                <div class="carousel-dots" aria-label="iOS screenshot pages"></div>
+              </div>
             </div>
 
-            <p class="preview-caption">Tap a platform to preview the interface.</p>
+            <p class="preview-caption">Swipe to browse screenshots. Open any image for full resolution.</p>
           </div>
         </div>
       </section>
@@ -156,68 +158,9 @@
             <label class="gallery-tab" for="gallery-ios">iOS</label>
           </div>
 
-          <div class="gallery-grid" data-platform="tvos" aria-label="tvOS screenshots">
-            <a class="gallery-shot" href="AppImages/tvOS/1.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/tvOS-1.webp" type="image/webp">
-                <img src="AppImages/tvOS/1.png" alt="tvOS Live playback UI" width="3840" height="2160" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/tvOS/2.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/tvOS-2.webp" type="image/webp">
-                <img src="AppImages/tvOS/2.png" alt="tvOS Settings UI" width="3840" height="2160" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/tvOS/3.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/tvOS-3.webp" type="image/webp">
-                <img src="AppImages/tvOS/3.png" alt="tvOS Add source UI" width="3840" height="2160" loading="lazy" decoding="async">
-              </picture>
-            </a>
-          </div>
-
-          <div class="gallery-grid" data-platform="macos" aria-label="macOS screenshots">
-            <a class="gallery-shot" href="AppImages/macOS/1.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/macOS-1.webp" type="image/webp">
-                <img src="AppImages/macOS/1.png" alt="macOS Add source UI" width="1280" height="800" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/macOS/2.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/macOS-2.webp" type="image/webp">
-                <img src="AppImages/macOS/2.png" alt="macOS Library grid UI" width="1280" height="800" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/macOS/3.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/macOS-3.webp" type="image/webp">
-                <img src="AppImages/macOS/3.png" alt="macOS Files UI" width="1280" height="800" loading="lazy" decoding="async">
-              </picture>
-            </a>
-          </div>
-
-          <div class="gallery-grid" data-platform="ios" aria-label="iOS screenshots">
-            <a class="gallery-shot" href="AppImages/iOS/1.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/iOS-1.webp" type="image/webp">
-                <img src="AppImages/iOS/1.png" alt="iOS Live playback UI" width="2048" height="2732" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/iOS/2.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/iOS-2.webp" type="image/webp">
-                <img src="AppImages/iOS/2.png" alt="iOS Player controls UI" width="2048" height="2732" loading="lazy" decoding="async">
-              </picture>
-            </a>
-            <a class="gallery-shot" href="AppImages/iOS/3.png" target="_blank" rel="noopener noreferrer">
-              <picture>
-                <source srcset="AppImages/web/iOS-3.webp" type="image/webp">
-                <img src="AppImages/iOS/3.png" alt="iOS Browse UI" width="2048" height="2732" loading="lazy" decoding="async">
-              </picture>
-            </a>
-          </div>
+          <div class="gallery-grid" data-platform="tvos" aria-label="tvOS screenshots"></div>
+          <div class="gallery-grid" data-platform="macos" aria-label="macOS screenshots"></div>
+          <div class="gallery-grid" data-platform="ios" aria-label="iOS screenshots"></div>
         </div>
       </section>
 
@@ -335,5 +278,6 @@
     </footer>
   </div>
   
+  <script type="module" src="scripts/app-images.js"></script>
 </body>
 </html>
