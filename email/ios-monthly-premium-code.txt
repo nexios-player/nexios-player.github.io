@@ -1,0 +1,28 @@
+Subject: Your 1-month Premium code for nexios player (iOS)
+
+Hi {{RECIPIENT_NAME}},
+
+As a thank-you, here's a complimentary 1-month Premium code for nexios player (iOS).
+
+Promo code {{EXPIRES_ON}}:
+{{PROMO_CODE}}
+
+How to redeem:
+1) Open the App Store on your iPhone/iPad
+2) Tap your profile (top right)
+3) Tap "Redeem Gift Card or Code"
+4) Enter the code above, then open nexios player
+5) If Premium doesn't unlock right away, use "Restore Purchases" in the app
+
+Please don't share this code - it's intended for you only and may be single-use.
+
+Download:
+iOS: https://apps.apple.com/us/app/nexios/id6757376509
+macOS: https://apps.apple.com/us/app/nexios/id6757376509?platform=mac
+tvOS: https://apps.apple.com/us/app/nexios/id6757376509?platform=tv
+Support: support@nexios-media.com
+
+Thanks,
+Team Nexios
+
+Note: If this code activates a subscription, it may auto-renew after the free month unless canceled. Manage subscriptions in iOS Settings -> Apple ID -> Subscriptions.

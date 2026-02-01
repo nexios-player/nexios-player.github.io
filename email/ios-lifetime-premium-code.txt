@@ -1,0 +1,27 @@
+Subject: Your Lifetime access code for nexios player (iOS)
+
+Hi {{RECIPIENT_NAME}},
+
+You've been selected for a complimentary Lifetime membership for nexios player (iOS).
+
+Promo code {{EXPIRES_ON}}:
+{{PROMO_CODE}}
+
+How to redeem:
+1) Open the App Store on your iPhone/iPad
+2) Tap your profile (top right)
+3) Tap "Redeem Gift Card or Code"
+4) Enter the code above, then open nexios player
+5) If Premium doesn't unlock right away, use "Restore Purchases" in the app
+
+Please don't share this code - it's intended for you only and may be single-use.
+Lifetime access is tied to the Apple ID that redeems the code.
+
+Download:
+iOS: https://apps.apple.com/us/app/nexios/id6757376509
+macOS: https://apps.apple.com/us/app/nexios/id6757376509?platform=mac
+tvOS: https://apps.apple.com/us/app/nexios/id6757376509?platform=tv
+Support: support@nexios-media.com
+
+Enjoy,
+Team Nexios
