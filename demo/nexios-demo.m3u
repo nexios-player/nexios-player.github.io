@@ -1,0 +1,19 @@
+#EXTM3U
+#EXTINF:-1 tvg-type="movie" tvg-logo="https://nexios-player.com/demo/posters/sintel.jpg" group-title="Open Movies",Sintel (2010)
+https://archive.org/download/Sintel/sintel-2048-stereo.mp4
+#EXTINF:-1 tvg-type="movie" tvg-logo="https://nexios-player.com/demo/posters/big-buck-bunny.jpg" group-title="Open Movies",Big Buck Bunny (2008)
+https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4
+#EXTINF:-1 tvg-type="movie" tvg-logo="https://nexios-player.com/demo/posters/tears-of-steel.jpg" group-title="Open Movies",Tears of Steel (2012)
+https://archive.org/download/Tears-of-Steel/tears_of_steel_1080p.mp4
+#EXTINF:-1 tvg-type="movie" tvg-logo="https://nexios-player.com/demo/posters/cosmos-laundromat.jpg" group-title="Open Movies",Cosmos Laundromat (2015)
+https://archive.org/download/CosmosLaundromatFirstCycle/Cosmos%20Laundromat%20-%20First%20Cycle%20%281080p%29.mp4
+#EXTINF:-1 tvg-type="movie" tvg-logo="https://nexios-player.com/demo/posters/elephants-dream.jpg" group-title="Open Movies",Elephants Dream (2006)
+https://archive.org/download/ElephantsDream/ed_hd.mp4
+#EXTINF:-1 tvg-id="toon-corner" tvg-name="Toon Corner" tvg-logo="https://nexios-player.com/demo/logos/toon-corner.png" group-title="Kids",Toon Corner
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+#EXTINF:-1 tvg-id="scifi-shorts" tvg-name="Sci-Fi Shorts" tvg-type="live" tvg-logo="https://nexios-player.com/demo/logos/scifi-shorts.png" group-title="Entertainment",Sci-Fi Shorts
+https://archive.org/download/Tears-of-Steel/tears_of_steel_1080p.mp4
+#EXTINF:-1 tvg-id="indie-cinema" tvg-name="Indie Cinema" tvg-type="live" tvg-logo="https://nexios-player.com/demo/logos/indie-cinema.png" group-title="Entertainment",Indie Cinema
+https://archive.org/download/CosmosLaundromatFirstCycle/Cosmos%20Laundromat%20-%20First%20Cycle%20%281080p%29.mp4
+#EXTINF:-1 tvg-id="night-owl" tvg-name="Night Owl" tvg-logo="https://nexios-player.com/demo/logos/night-owl.png" group-title="Entertainment",Night Owl
+https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8

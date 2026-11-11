@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Nexios for Android | Privacy Policy</title>
+<meta name="description" content="Privacy Policy (Nexios For Android), Last Updated: November 11, 2026.">
+<style>
+:root{--bg:#f7f8fa;--card:#ffffff;--fg:#1b1f24;--muted:#5b6470;--line:#e3e6ea;--accent:#1f5fbf}
+@media (prefers-color-scheme: dark){:root{--bg:#0e1116;--card:#161b22;--fg:#e6e8eb;--muted:#9aa4af;--line:#2a313a;--accent:#6aa5ff}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+header{margin-bottom:20px}
+.eyebrow{margin:0;color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+h1{margin:6px 0 4px;font-size:clamp(24px,6vw,32px);line-height:1.2}
+.updated{margin:0;color:var(--muted);font-size:14px}
+nav.switch{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+nav.switch a{padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--fg);text-decoration:none;font-size:14px}
+nav.switch a[aria-current=page]{background:var(--accent);border-color:var(--accent);color:#fff}
+article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 20px 20px}
+h2{margin:26px 0 8px;font-size:18px;line-height:1.3}
+p{margin:0 0 12px}
+ul{margin:0 0 12px;padding-left:22px}
+li{margin:0 0 6px}
+a{color:var(--accent);overflow-wrap:anywhere}
+article p,article li{overflow-wrap:anywhere}
+footer{margin-top:20px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="eyebrow">Nexios for Android</p>
+<h1>Privacy Policy</h1>
+<p class="updated">Last Updated: November 11, 2026</p>
+<nav class="switch" aria-label="Legal documents">
+<a href="privacy.html" aria-current="page">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
+</nav>
+</header>
+<article>
+<p>This policy covers Nexios for Android phones, tablets and Android TV, published on Google Play by Nexios Media ("we", "us"). It follows the same principles as the Nexios privacy policy for iPhone, iPad, Mac and Apple TV, and adds the details that are specific to Android.</p>
+<h2 id="s1">1. Data Minimization Principle</h2>
+<p>Nexios is designed to be "privacy-first."</p>
+<ul><li>There is no Nexios account, login or user profile.</li><li>We do not operate servers that store your sources, your passwords or what you watch.</li><li>Your sources, settings, favourites and watch progress stay on your device.</li><li>The app shows no ads and does not use the Android advertising ID. It contains no analytics or crash-reporting service of our own. Two Google components built into the app send limited diagnostics to Google (see Section 5).</li></ul>
+<h2 id="s2">2. Information We Do Not Collect</h2>
+<ul><li>We do NOT collect your IPTV credentials (usernames and passwords).</li><li>We do NOT track which channels, movies or shows you watch.</li><li>We do NOT sell your data or share it for advertising.</li><li>We do NOT collect your location, contacts, photos, files or microphone audio.</li></ul>
+<h2 id="s3">3. Data Stored on Your Device</h2>
+<p>The following is stored only on your device:</p>
+<ul><li>Sources you add: M3U playlist and EPG addresses, Xtream Codes server addresses and usernames, and the addresses of network shares or servers (SMB, DLNA, WebDAV, FTP, SFTP).</li><li>Passwords for those sources, encrypted with a key kept in the Android Keystore.</li><li>Favourites, Continue Watching progress, downloads, and your app, player, subtitle and caption settings.</li><li>A cache of artwork, critic scores and guide data, so screens load faster.</li></ul>
+<p>Android 1.0 has no cross-device sync, and the app opts out of Android cloud backup, so this data is not uploaded to our servers or to your Google Drive backup. Because we hold no copy, we cannot recover it if you lose or reset your device.</p>
+<h2 id="s4">4. Network Connections and Third Parties</h2>
+<p>When you load a playlist or play a stream, the app connects directly from your device to the server you chose. We do not proxy, intercept or receive a copy of that traffic.</p>
+<ul><li>Your content provider and your own servers: your IPTV, Xtream or M3U provider, and any NAS or server you add, receive the requests needed to load and play your content, and can see your device's IP address. That is your provider, not us. Some providers only offer unencrypted (http) connections; the app allows them because you chose that server.</li><li>TV-guide service (operated by us): the app downloads curated lists, artwork and app settings from our TV-guide service (tv-guide-api.ossoftwaredev.workers.dev, hosted on Cloudflare). These are downloads only. The requests contain an app key and nothing about you, your sources or your library; titles are matched to your library on your device. Like any web server, the service receives your IP address, and our hosting provider may process it in standard request logs for security and reliability. We do not use it to identify you.</li><li>Critic scores (OMDb): when you open a movie or series page, the app sends that title and year to OMDb (omdbapi.com) to fetch ratings. No identifier about you is included, and the result is cached on your device.</li><li>Artwork (TMDB): some posters and artwork may be loaded directly from the image servers of The Movie Database (TMDB). These requests contain only the address of the image.</li><li>Live-caption models (Hugging Face): see Section 6.</li><li>Local network: the app looks for Chromecast devices and connects to network shares on your local network only when you use those features.</li></ul>
+<p>As with any internet use, every server the app connects to can see your device's IP address. Each third-party service has its own privacy policy.</p>
+<h2 id="s5">5. Google Services in the App</h2>
+<p>Google handles the information below under the Google Privacy Policy (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>). Google uses it to run, maintain and improve these services. We do not receive it, and it is not used for advertising.</p>
+<ul><li>Google Cast (phones and tablets): when you cast, Nexios sends the video from your phone to your Cast device over your local network; nothing goes through our servers. The Google Cast SDK, which finds and controls Cast devices, sends Google information about Cast device discovery and Cast sessions, about your phone, and about the Cast app. Google states that these logs contain no identifier that can be traced back to you. This happens whenever Cast discovery or a Cast session runs, and it cannot be switched off in the app.</li><li>Google ML Kit (phones and tablets): translation of live captions runs on your device using Google ML Kit. The language packs are downloaded from Google, and the text of your captions is not sent to Google. ML Kit sends Google technical information: device details (manufacturer, model, Android version and build, machine-learning hardware), the app's package name and version, a per-installation identifier, event types (such as start-up, model download and translation), performance metrics, error codes, and the source and target languages you chose. ML Kit components start when the app opens, so some of this information may be sent even if you never use translation.</li><li>Google Play Billing: purchases are handled by Google Play (see Section 7). The billing component may also send Google diagnostic information about purchase flows. This applies to phones, tablets and Android TV.</li></ul>
+<h2 id="s6">6. Live Captions (Optional, Phones and Tablets)</h2>
+<p>Live captions are off by default, and the speech-recognition engine is not included in every version of the app. Where it is available:</p>
+<ul><li>When you turn them on, the app downloads a speech-recognition model from Hugging Face (huggingface.co). Hugging Face receives that download request, like any web server.</li><li>Speech recognition runs on your device. The app listens to the audio of the video you are playing, not to your microphone, and it does not ask for microphone permission.</li><li>Translation runs on your device with Google ML Kit (see Section 5).</li><li>No audio and no caption text is sent to us or to anyone else.</li></ul>
+<h2 id="s7">7. Purchases and Subscriptions</h2>
+<ul><li>Nexios Premium is sold as subscriptions and a one-time purchase through Google Play Billing. Payment is handled by Google under Google's terms. We never see or store your payment details.</li><li>Whether Premium is active is checked with Google Play on your device and cached on your device. We do not run a purchase server.</li><li>Purchases are per store. Premium bought on Google Play unlocks Nexios on Android devices signed in to the same Google account. It does not carry over to the App Store, and a purchase made in the App Store (iPhone, iPad, Mac or Apple TV) does not unlock Nexios on Android.</li><li>You can manage or cancel a subscription at any time in the Google Play Store app under Payments &amp; subscriptions &gt; Subscriptions, or at <a href="https://play.google.com/store/account/subscriptions">play.google.com/store/account/subscriptions</a>. Cancellations and refunds follow Google Play's policies.</li></ul>
+<h2 id="s8">8. Support Logs</h2>
+<p>On phones and tablets, Settings &gt; Export logs creates a diagnostics file on your device and opens the Android share sheet. Nothing is sent unless you choose where to send it. Before the file is created, the app removes passwords and other credentials it recognizes. The file can still contain server addresses and titles, so please check it before you share it.</p>
+<h2 id="s9">9. Permissions the App Uses</h2>
+<ul><li>Internet and network state: to load your sources, play media and detect when the connection changes.</li><li>Foreground service (media playback), notifications and wake lock: to keep playback, Picture in Picture and Cast sessions running when the screen is off or the app is in the background, and to show the media controls notification that Android requires. The app does not send marketing notifications.</li><li>Google Play Billing: to sell Premium.</li></ul>
+<p>The app does not request location, contacts, camera, microphone, storage or the advertising ID. This version has no VPN feature.</p>
+<h2 id="s10">10. Your Data Rights (GDPR / CCPA / GPC)</h2>
+<ul><li>We honor "Global Privacy Control" (GPC) signals. We do not sell or share personal data in any case.</li><li>Because we store no identifiable data on our servers, there is no data to access, export or delete from our side.</li><li>On phones and tablets, Settings &gt; Delete browsing data clears your Continue Watching progress.</li><li>To remove everything the app has stored, open Android Settings &gt; Apps &gt; Nexios &gt; Storage and tap Clear storage, or uninstall the app.</li><li>For data held by Google (Section 5) or by your provider and other services (Section 4), use their own privacy controls.</li></ul>
+<h2 id="s11">11. Children's Privacy</h2>
+<p>The App is not intended for children under 13 (or the higher minimum age in your country). We do not knowingly collect information from children. Content ratings and age eligibility are handled through Google Play.</p>
+<h2 id="s12">12. Changes to This Policy</h2>
+<p>We may update this policy. The "Last Updated" date above shows the latest version. If our data handling changes significantly, we will tell you in the app.</p>
+<h2 id="s13">13. Contact</h2>
+<p>Privacy Inquiries: <a href="mailto:support@nexios-media.com">support@nexios-media.com</a></p>
+<p>Publisher: Nexios Media</p>
+</article>
+<footer>
+<p>This page is the same text that is shown in the app under Settings &gt; Legal. For Nexios on iPhone, iPad, Mac and Apple TV, see the <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms</a> for Apple platforms. Questions: <a href="mailto:support@nexios-media.com">support@nexios-media.com</a>.</p>
+</footer>
+</main>
+</body>
+</html>
